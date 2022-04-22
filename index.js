@@ -182,3 +182,92 @@ function alternatingCharacters(s) {
 
   return deleteCount;
 }
+arr = [4, 5];
+function sum(arr) {
+  let sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+console.log(sum(arr));
+
+var array = [4, 4, 1, 3];
+function birthadayCandles(array) {
+  var height = Math.max(...array);
+  var frequency = 0;
+
+  for (i = 0; i < array.length; i++) {
+    if (array[i] == height) {
+      frequency += 1;
+    }
+  }
+  return frequency;
+}
+console.log(birthadayCandles(array));
+
+var grades = [73, 67, 38, 33];
+
+function gradingStudents(grades) {
+  for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 38 && (grades[i] % 5 == 3 || grades[i] % 5 == 4)) {
+      grades[i] = grades[i] + (5 - (grades[i] % 5));
+    }
+  }
+  return grades;
+}
+console.log(gradingStudents(grades));
+
+function minimaxSum(arr) {
+  (max = arr[0]), (min = arr[0]);
+  let sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (max < arr[i]) max = arr[i];
+    if (max > arr[i]) max = arr[i];
+  }
+  sum += arr[i];
+}
+function divisibleSumPairs(n, k, ar) {
+  let count = 0;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if ((ar[i] + ar[j]) % k == 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+function pageCount(n, p) {
+  let fromFront = Math.floor(p / 2);
+  let fromBack = 0;
+  if (n % 2 == 0) {
+    fromBack = Math.floor((n - p + 1) / 2);
+  } else {
+    fromBack = Math.floor((n - p) / 2);
+  }
+  return Math.min(fromFront, fromBack);
+}
+function birthday(s, d, m) {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    let total = 0;
+    for (let j = 0; j < m; j++) {
+      total += s[i + j];
+    }
+    if (total == d) {
+      count++;
+    }
+  }
+  return count;
+}
+function viralAdvertising(n) {
+  let likes = 0;
+  let shares = 5;
+  for (let i = 0; i < n; i++) {
+    likes += Math.floor(shares / 2);
+    shares = Math.floor(shares / 2) * 3;
+  }
+  return likes;
+}
